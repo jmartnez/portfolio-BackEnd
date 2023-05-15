@@ -5,7 +5,6 @@
 package com.portfolio.jm.Service;
 
 import com.portfolio.jm.Entity.Persona;
-import com.portfolio.jm.Interface.IPersonaService;
 import com.portfolio.jm.Repository.IPersonaRepository;
 import java.util.List;
 import java.util.Optional;
@@ -15,11 +14,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class ImpPersonaService implements IPersonaService {
+public class ImpPersonaService{
     @Autowired
     IPersonaRepository ipersonaRepository;
 
-    /*public List<Persona> list() {
+    public List<Persona> list() {
         return ipersonaRepository.findAll();
     }
 
@@ -45,27 +44,5 @@ public class ImpPersonaService implements IPersonaService {
 
     public boolean existsByNombre(String nombre) {
         return ipersonaRepository.existsByNombre(nombre);
-    }*/
-
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = ipersonaRepository.findAll();
-        return persona;
-    }
-
-    @Override
-    public void savePersona(Persona persona) {
-        ipersonaRepository.save(persona);
-    }
-
-    @Override
-    public void deletePersona(int id) {
-        ipersonaRepository.deleteById(id);
-    }
-
-    @Override
-    public Persona findPersona(int id) {
-        Persona persona = ipersonaRepository.findById(id).orElse(null);
-        return persona;
     }
 }

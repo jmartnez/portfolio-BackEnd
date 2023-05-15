@@ -4,13 +4,15 @@
  */
 package com.portfolio.jm.Repository;
 
-import com.portfolio.jm.Entity.Persona;
+import com.portfolio.jm.Entity.Hys;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface IPersonaRepository extends JpaRepository<Persona, Integer> {
-    public Optional<Persona> findByNombre(String nombre);
+/**
+ *
+ * @author WindowsPC
+ */
+public interface RHys extends JpaRepository<Hys, Integer> {
+    Optional<Hys> findByNombre(String nombre);
     public boolean existsByNombre(String nombre);
 }
